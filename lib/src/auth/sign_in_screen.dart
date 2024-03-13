@@ -1,3 +1,4 @@
+import 'package:fazafeira/src/auth/components/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -6,7 +7,7 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.blue,
       body: Column(
         children: [
           Expanded(
@@ -26,19 +27,19 @@ class SignInScreen extends StatelessWidget {
                   top: Radius.circular(45),
                 ),
               ),
-              child: Column(
+              child: const Column(
                 children: [
                   //Email
-                  TextFormField(
-                    decoration: InputDecoration(
-                      isDense: true,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(18)
-                      )
-                    ),
+                  CustomTextField(
+                    icon: Icons.email,
+                    label: 'Email',
                   ),
                   //Senha
-                  TextFormField(),
+                  CustomTextField(
+                    icon: Icons.lock,
+                    label: 'Senha',
+                    shouldHide: true,
+                  ),
                 ],
               ),
             ),
